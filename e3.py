@@ -1,34 +1,31 @@
 
 def e3():
     primes = [ 2 ]
+    n = 600851475143
+    max_prime = 0
+    current_count = 3
 
-    def next_prime( primes ):
-        test_num = primes[-1] + 1
-        while True:
-            for p in primes:
-                if test_num % p == 0:
-                    test_num += 1
-                    break
-                if p * p > test_num:
-                    primes.append( test_num )
-                    return test_num
+    while True:
+        is_prime = True
+        for p in primes:
+            if n % p == 0:
+                is_prime = False
+                break
+            if p * p > n:
+                break
 
-    def lpf( current_answer, last_prime, n, primes ):
-        return koz
+        if is_prime:
+            primes.append( current_count)
+            while n % current_count == 0:
+                max_prime = current_count
+                n /= current_count
 
-    n = 13195
-    current_answer = 1
+        if n == 1:
+            break
 
-    while primes[-1] * primes[-1] < n:
-        next_prime( primes )
+        current_count += 1
 
-    while n > 1:
-        p = lpf( current_answer, primes[-1], n, primes )
-        while n % p == 0:
-            n /= p
-
-
-
+    return max_prime
 
 if __name__ == '__main__':
     print e3()

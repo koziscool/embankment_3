@@ -17,7 +17,6 @@ def e5():
                 factors[p] += 1
             factors_20[p] = max( factors_20[p], factors[p] )
             primes_index += 1
-            # print i, q
 
     prod = 1
     for base, exp in factors_20.iteritems():
